@@ -1,10 +1,25 @@
+<!--Basic nav from Jekyll-->
 <!--<nav>-->
     <!--<a href="/">Home</a>-->
     <!--<a href="/about.html">About</a>-->
 <!--</nav>-->
 
-<nav>
+
+<!--Navs from Bootstrap-->
+<ul class="nav nav-pills justify-content-end">
     {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+    <li class="nav-item">
+        <a href="{{ item.link }}" 
+            {% if page.url == item.link %}
+            class="nav-link active"
+            {% else %}
+            class="nav-link"
+            {% endif %}>{{ item.name }}
+        </a>
+    </li>
     {% endfor %}
-</nav>
+</ul>
+
+
+
+
